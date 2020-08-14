@@ -1,0 +1,40 @@
+import java.util.*;
+
+class DoleOutCadbury {
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int a1=in.nextInt();
+        int a2=in.nextInt();
+        int b1=in.nextInt();
+        int b2=in.nextInt();
+        int k=a1;
+        int count=0;
+        for(int i=0;i<(a2-a1+1)*(b2-b1+1);i++)
+        {
+            for(int j=b1;j<=b2;j++)
+            {
+                int aa=k;
+                int bb=j;
+                while(aa>0 && bb>0)
+                {
+                    if(aa>=bb)
+                    {
+                        aa=aa-bb;
+                        count++;
+                    }
+                    else if(aa<bb)
+                    {
+                        bb=bb-aa;
+                        count++;
+                    }
+                }
+                i++;
+            }
+            k++;
+            i--;
+        }
+
+        System.out.print(count);
+    }
+}
